@@ -1,4 +1,4 @@
-fetch('https://cors-anywhere.herokuapp.com/https://ctftime.org/api/v1/teams/220336/', {
+fetch('https://corsproxy.io/?https%3A%2F%2Fctftime.org%2Fapi%2Fv1%2Fteams%2F220336%2F', {
     headers: {
       'Accept': 'application/json',
     }
