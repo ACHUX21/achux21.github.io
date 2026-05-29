@@ -1,0 +1,158 @@
+---
+import '@waline/client/style';
+
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+
+---
+
+<div id="waline" class:list={['not-prose', className]}>
+  Comment seems stuck. Try to refresh?
+</div>
+
+<script>
+  import { init as walineInit } from '@waline/client';
+
+  const walineMounted = { current: false };
+
+  function boot() {
+    const el = document.getElementById('waline');
+    if (!el) return;
+    walineMounted.current = true;
+    walineInit({
+      el: '#waline',
+      serverURL: '',  //waline服务链接
+      lang: 'zh-CN',
+      dark: 'auto',
+      meta: ['nick', 'mail', 'link'],
+      requiredMeta: ['nick'],
+      pageSize: 10,
+      imageUploader: false,
+      noRss: true
+    });
+  }
+
+  boot();
+  document.addEventListener('astro:after-swap', boot);
+</script>
+
+<style>
+  #waline {
+    --waline-font-size: 16px;
+    --waline-white: var(--color-card, #ffffff);
+    --waline-light-grey: #999;
+    --waline-dark-grey: #666;
+    --waline-theme-color: var(--color-primary, #e9536a);
+    --waline-active-color: var(--color-primary, #e9536a);
+    --waline-color: var(--color-text, #2c3e50);
+    --waline-bg-color: var(--color-card, #ffffff);
+    --waline-bg-color-light: var(--color-bg, #f5f5f5);
+    --waline-bg-color-hover: #f0f0f0;
+    --waline-border-color: var(--color-border, #e8e8e8);
+    --waline-disable-bg-color: #f8f8f8;
+    --waline-disable-color: #bbb;
+    --waline-code-bg-color: #282c34;
+    --waline-bq-color: #f0f0f0;
+    --waline-avatar-size: 3.25rem;
+    --waline-m-avatar-size: calc(var(--waline-avatar-size) * 9 / 13);
+    --waline-badge-color: var(--color-border, #e8e8e8);
+    --waline-badge-font-size: 0.775em;
+    --waline-info-bg-color: var(--waline-bg-color-light);
+    --waline-info-color: var(--waline-color);
+    --waline-info-font-size: 0.625em;
+    --waline-border: 1px solid var(--waline-border-color);
+    --waline-avatar-radius: 50%;
+    --waline-box-shadow: none;
+  }
+
+  .dark #waline {
+    --waline-white: var(--color-card-dark, #1e2a45);
+    --waline-bg-color: var(--color-card-dark, #1e2a45);
+    --waline-bg-color-light: var(--color-bg-dark, #1a1a2e);
+    --waline-bg-color-hover: #2a2a4a;
+    --waline-border-color: var(--color-border, #2a2a4a);
+    --waline-bq-color: #1e2a45;
+  }
+
+  #waline :global(.wl-content),
+  #waline :global(.wl-text),
+  #waline :global(.wl-comment-text),
+  #waline :global(.wl-item),
+  #waline :global(.wl-card-item),
+  #waline :global(a) {
+    max-width: 100%;
+  }
+  #waline :global(.wl-meta),
+  #waline :global(.wl-content),
+  #waline :global(.wl-text),
+  #waline :global(.wl-comment-text) {
+    word-wrap: break-word;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+  }
+  #waline :global(a) {
+    display: inline-block;
+  }
+
+  #waline :global(.wl-reaction-title),
+  #waline :global(.wl-reaction-text) {
+    display: none;
+  }
+  #waline :global(.wl-reaction) {
+    overflow: visible;
+    margin-bottom: 0.5em;
+  }
+  #waline :global(.wl-reaction-img) {
+    width: auto;
+    display: flex;
+    height: 35px;
+    align-items: center;
+    column-gap: 0.4rem;
+  }
+  #waline :global(.wl-reaction-votes) {
+    position: inherit;
+    top: inherit;
+    min-width: inherit;
+    inset-inline-end: inherit;
+    display: flex;
+    font-weight: normal;
+    border: none;
+    background: none;
+    color: inherit;
+    padding: 0.2rem 0.4rem;
+    border-radius: 6px;
+  }
+  #waline :global(.wl-reaction-loading) {
+    position: inherit;
+    top: inherit;
+    min-width: inherit;
+  }
+  #waline :global(.wl-reaction-item.active .wl-reaction-votes) {
+    background: var(--waline-theme-color);
+    color: var(--waline-bg-color);
+  }
+  #waline :global(.wl-reaction-votes:after) {
+    margin-left: 0.25em;
+    content: 'Like(s)';
+    display: inline-block;
+    clear: both;
+    border: 0;
+  }
+  #waline :global(.wl-reaction img) {
+    filter: invert(25%);
+  }
+  .dark #waline :global(.wl-reaction img) {
+    filter: invert(75%);
+  }
+
+  #waline :global(label[for="wl-edit"]),
+  #waline :global(.wl-subscription),
+  #waline :global(input[type="checkbox"][id*="sub"]),
+  #waline :global(label[for*="sub"]),
+  #waline :global(.wl-footer-item) {
+    display: none !important;
+  }
+</style>

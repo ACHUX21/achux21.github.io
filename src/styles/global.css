@@ -1,0 +1,217 @@
+@import 'tailwindcss';
+@import 'katex/dist/katex.min.css';
+@plugin '@tailwindcss/typography';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-primary: #e9536a;
+  --color-primary-light: #f2a0ae;
+  --color-primary-dark: #c53050;
+
+  --color-bg-light: #f5f5f5;
+  --color-bg-dark: #1a1a2e;
+  --color-card-light: #ffffff;
+  --color-card-dark: #1e2a45;
+
+  --font-family-sans: 'Inter', 'Noto Sans SC', -apple-system, 'Segoe UI',
+    Roboto, sans-serif;
+  --font-family-mono: 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+:root {
+  --color-text: #2c3e50;
+  --color-text-secondary: #7f8c8d;
+  --color-bg: #f5f5f5;
+  --color-card: #ffffff;
+  --color-border: #e8e8e8;
+  color-scheme: light;
+}
+
+:root.dark {
+  --color-text: #e8e8e8;
+  --color-text-secondary: #999999;
+  --color-bg: #1a1a2e;
+  --color-card: #1e2a45;
+  --color-border: #2a2a4a;
+  color-scheme: dark;
+}
+
+html {
+  font-size: 17px;
+}
+
+@media (max-width: 640px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+body {
+  @apply transition-colors duration-300;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-family-sans);
+  line-height: 1.75;
+}
+
+::selection {
+  @apply bg-primary/25;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-primary) transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.prose {
+  --tw-prose-body: var(--color-text);
+  --tw-prose-headings: var(--color-text);
+  --tw-prose-links: var(--color-primary);
+  --tw-prose-bold: var(--color-text);
+  --tw-prose-code: var(--color-primary);
+  --tw-prose-quotes: var(--color-text-secondary);
+  --tw-prose-quote-borders: var(--color-primary);
+  --tw-prose-counters: var(--color-text-secondary);
+  --tw-prose-bullets: var(--color-primary);
+  --tw-prose-hr: var(--color-border);
+  --tw-prose-pre-bg: #1e1e2e;
+  --tw-prose-th-borders: var(--color-border);
+  --tw-prose-td-borders: var(--color-border);
+  max-width: none;
+}
+
+.dark .prose {
+  --tw-prose-code: var(--color-primary-light);
+}
+
+.prose :where(code):not(:where([class~='not-prose'] *)) {
+  font-weight: 500;
+}
+
+.prose :where(code):not(:where([class~='not-prose'] *))::before,
+.prose :where(code):not(:where([class~='not-prose'] *))::after {
+  content: '';
+}
+
+.prose pre {
+  @apply rounded-xl shadow-lg border border-gray-100 dark:border-gray-800;
+}
+
+.prose img {
+  @apply rounded-xl shadow-sm;
+}
+
+.prose a {
+  @apply no-underline font-medium transition-colors;
+  text-decoration-color: var(--color-primary);
+  text-underline-offset: 3px;
+}
+
+.prose a:hover {
+  @apply underline;
+}
+
+.prose h1 {
+  @apply text-2xl sm:text-3xl font-bold tracking-tight mt-10 mb-6;
+}
+
+.prose h2 {
+  @apply text-lg sm:text-xl font-semibold mt-10 mb-4 border-l-4 border-primary pl-4;
+}
+
+.prose h3 {
+  @apply text-base sm:text-lg font-semibold mt-8 mb-3 border-l-2 border-primary/30 pl-3;
+}
+
+.prose h4 {
+  @apply text-sm sm:text-base font-semibold mt-6 mb-2;
+}
+
+.prose blockquote {
+  @apply border-l-4 border-primary/30 bg-gray-50 dark:bg-gray-800/30 rounded-r-lg;
+}
+
+.prose table {
+  @apply rounded-xl overflow-hidden shadow-sm;
+}
+
+.prose thead {
+  @apply bg-gray-50 dark:bg-gray-800/50;
+}
+
+.prose th {
+  @apply font-semibold;
+}
+
+.prose td,
+.prose th {
+  @apply px-4 py-2;
+}
+
+.prose ul > li::marker {
+  color: var(--color-primary);
+}
+
+.prose ol > li::marker {
+  color: var(--color-primary);
+}
+
+.prose hr {
+  @apply border-gray-200 dark:border-gray-700;
+}
+
+.card-hover {
+  @apply transition-all duration-300 ease-out;
+  will-change: transform, box-shadow;
+}
+
+.card-hover:hover {
+  @apply -translate-y-1 shadow-lg;
+}
+
+.dark .card-hover:hover {
+  @apply shadow-primary/10;
+}
+
+.code-block-wrapper {
+  position: relative;
+}
+
+.code-block-wrapper .copy-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.5rem;
+  border: 1px solid transparent;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s, color 0.2s, background-color 0.2s;
+}
+
+.code-block-wrapper:hover .copy-btn {
+  opacity: 1;
+}
+
+.code-block-wrapper .copy-btn:hover {
+  color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.code-block-wrapper .copy-btn.copied {
+  color: #4ade80;
+  opacity: 1;
+}
+
