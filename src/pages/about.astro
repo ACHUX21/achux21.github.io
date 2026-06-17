@@ -3,26 +3,31 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { SITE_AUTHOR } from '../consts';
 ---
 
-<BaseLayout title="关于">
+<BaseLayout title="About">
   <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-8">
     <article class="prose max-w-none">
-      <h1>关于</h1>
+      <h1>About</h1>
       <p>
-        你好，我是 {SITE_AUTHOR}。这里是基于 Astro 构建的现代化博客。
+        I'm {SITE_AUTHOR}, a random guy who likes playing CTFs. This blog is a collection
+        of my Capture The Flag writeups — documenting the techniques, tools, and thought
+        processes behind each challenge.
       </p>
       <p>
-        这里会记录我的学习笔记、技术分享和生活随笔。希望你能在这里找到有用的内容。
+        All writeups are linked to my
+        <a href="https://github.com/ACHUX21/Writeups">Writeups repository</a> on GitHub.
       </p>
-      <h2>关于本站</h2>
+      <h2>Platforms</h2>
       <ul>
-        <li>框架：<a href="https://astro.build">Astro</a></li>
-        <li>样式：Tailwind CSS</li>
-        <li>部署：静态站点</li>
+        <li><a href="https://ctftime.org/user/150843">CTFtime</a></li>
+        <li><a href="https://tryhackme.com/">TryHackMe</a></li>
+        <li><a href="https://www.hackthebox.com/">Hack The Box</a></li>
+        <li><a href="https://www.root-me.org/">Root-Me</a></li>
       </ul>
-      <h2>联系</h2>
-      <p>如有任何问题或建议，欢迎通过以下方式联系：</p>
+      <h2>Tech</h2>
       <ul>
-        <li><a href="https://github.com/santisify">GitHub</a></li>
+        <li>Built with <a href="https://astro.build">Astro</a> + Tailwind CSS</li>
+        <li>Theme: <a href="https://github.com/santisify/astro-theme-sify">Sify</a></li>
+        <li>Deployed on Vercel</li>
       </ul>
     </article>
   </div>

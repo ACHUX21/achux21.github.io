@@ -6,7 +6,7 @@ import rehypeKatex from 'rehype-katex';
 import { unified } from '@astrojs/markdown-remark';
 
 export default defineConfig({
-  site: 'http://localhost:4321',
+  site: 'https://achux21.github.io',
   integrations: [mdx()],
   vite: {
     plugins: [tailwindcss()],

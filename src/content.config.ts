@@ -16,20 +16,6 @@ const blogCollection = defineCollection({
   }),
 });
 
-const weeklyCollection = defineCollection({
-  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/weekly' }),
-  schema: z.object({
-    title: z.string(),
-    description: z.string().optional(),
-    date: z.coerce.date().default(() => new Date()),
-    tags: z.array(z.string()).default([]),
-    cover: z.string().optional(),
-    issue: z.number(),
-    draft: z.boolean().default(false),
-  }),
-});
-
 export const collections = {
   blog: blogCollection,
-  weekly: weeklyCollection,
 };
