@@ -49,15 +49,13 @@ export const spineModelConfig: SpineModelConfig = {
 			"emoji_5",
 		],
 		// 点击时随机显示的文字消息
-		clickMessages: [
-			"你好呀！我是流萤~",
-			"今天也要加油哦！✨",
-			"想要一起去看星空吗？🌟",
-			"记得要好好休息呢~",
-			"有什么想对我说的吗？💫",
-			"让我们一起探索未知的世界吧！🚀",
-			"每一颗星星都有自己的故事~⭐",
-			"希望能带给你温暖和快乐！💖",
+	clickMessages: [
+			"Hey there! Welcome to the blog~",
+			"Did you find any good writeups?",
+			"Break it, understand it, write it down.",
+			"From recon to root — every chain documented.",
+			"Lain would be proud of you.",
+			"Security is a mindset, not a checklist.",
 		],
 		// 文字显示时间（毫秒）
 		messageDisplayTime: 3000,
@@ -85,7 +83,7 @@ export const spineModelConfig: SpineModelConfig = {
 // Live2D 看板娘配置 (使用 l2d-widget 库，文档：https://l2d-widget.hacxy.cn)
 export const live2dWidgetConfig: Live2DWidgetConfig = {
 	// Live2D 看板娘开关
-	enable: false,
+	enable: true,
 	// 模型配置，支持单个模型或数组（多模型切换）
 	model: [
 		{
@@ -157,13 +155,13 @@ export const live2dWidgetConfig: Live2DWidgetConfig = {
 		// 气泡开关
 		enable: true,
 		// 初始欢迎消息
-		welcomeMessage: ["你好呀！", "欢迎来到我的世界！"],
+		welcomeMessage: ["Welcome to CTF Writeups!", "Hey, I'm your mascot~"],
 		// 循环提示内容
 		messages: [
-			"有什么需要帮助的吗？",
-			"今天天气真不错呢！",
-			"要不要一起玩游戏？",
-			"记得按时休息哦！",
+			"Check out the latest writeups!",
+			"Did you try the Lain OST player?",
+			"From SSRF to root — every chain matters.",
+			"Break things, write things, repeat.",
 		],
 		// 文字显示时间（ms）
 		duration: 3000,
