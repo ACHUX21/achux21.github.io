@@ -84,18 +84,18 @@ export const spineModelConfig: SpineModelConfig = {
 export const live2dWidgetConfig: Live2DWidgetConfig = {
 	// Live2D 看板娘开关
 	enable: true,
-	// 模型配置 — Pio model (lain-themed mascot)
+	// 模型配置 — Haru (dark hair, formal)
 	model: {
-		path: "https://model.hacxy.cn/Pio/model.json",
+		path: "https://model.hacxy.cn/Haru/model.json",
 		volume: 0,
-		scale: 1.2,
+		scale: 1.0,
 		x: 0,
 		y: 0,
 	},
 	// 显示位置
 	position: "bottom-left" as const,
 	// 画布尺寸（px）
-	size: { width: 240, height: 240 },
+	size: { width: 240, height: 280 },
 	// 主题色
 	primaryColor: "var(--l2d-msg-bg)",
 	// 入场/退场动画时长（ms）
