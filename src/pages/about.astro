@@ -1,34 +1,25 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import { SITE_AUTHOR } from '../consts';
----
 
-<BaseLayout title="About">
-  <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-8">
-    <article class="prose max-w-none">
-      <h1>About</h1>
-      <p>
-        I'm {SITE_AUTHOR}, a random guy who likes playing CTFs. This blog is a collection
-        of my Capture The Flag writeups — documenting the techniques, tools, and thought
-        processes behind each challenge.
-      </p>
-      <p>
-        All writeups are linked to my
-        <a href="https://github.com/ACHUX21/Writeups">Writeups repository</a> on GitHub.
-      </p>
-      <h2>Platforms</h2>
-      <ul>
-        <li><a href="https://ctftime.org/user/150843">CTFtime</a></li>
-        <li><a href="https://tryhackme.com/">TryHackMe</a></li>
-        <li><a href="https://www.hackthebox.com/">Hack The Box</a></li>
-        <li><a href="https://www.root-me.org/">Root-Me</a></li>
-      </ul>
-      <h2>Tech</h2>
-      <ul>
-        <li>Built with <a href="https://astro.build">Astro</a> + Tailwind CSS</li>
-        <li>Theme: <a href="https://github.com/santisify/astro-theme-sify">Sify</a></li>
-        <li>Deployed on Vercel</li>
-      </ul>
-    </article>
-  </div>
-</BaseLayout>
+import { getEntry, render } from "astro:content";
+import Markdown from "@components/common/Markdown.astro";
+import I18nKey from "@/i18n/i18nKey";
+import { i18n } from "@/i18n/translation";
+import MainGridLayout from "@/layouts/MainGridLayout.astro";
+
+const aboutPost = await getEntry("spec", "about");
+
+if (!aboutPost) {
+	throw new Error("About page content not found");
+}
+
+const { Content } = await render(aboutPost);
+---
+<MainGridLayout title={i18n(I18nKey.about)} description={i18n(I18nKey.about)}>
+    <div class="flex w-full rounded-(--radius-large) overflow-hidden relative min-h-32">
+        <div class="card-base z-10 px-9 py-6 relative w-full ">
+            <Markdown class="mt-2">
+                <Content />
+            </Markdown>
+        </div>
+    </div>
+</MainGridLayout>

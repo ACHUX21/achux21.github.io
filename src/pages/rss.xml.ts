@@ -1,21 +1,63 @@
-import rss from '@astrojs/rss';
-import { getCollection } from 'astro:content';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import { loadRenderers } from "astro:container";
+import { render } from "astro:content";
+import { getContainerRenderer as getMDXRenderer } from "@astrojs/mdx";
+import rss, { type RSSFeedItem } from "@astrojs/rss";
+import I18nKey from "@i18n/i18nKey";
+import { i18n } from "@i18n/translation";
+import { getSortedPosts } from "@utils/content-utils";
+import { formatDateI18nWithTime } from "@utils/date-utils";
+import { url } from "@utils/url-utils";
+import type { APIContext } from "astro";
+import { experimental_AstroContainer as AstroContainer } from "astro/container";
+import sanitizeHtml from "sanitize-html";
+import { siteConfig } from "@/config";
+import pkg from "../../package.json";
 
-export async function GET(context: { site: URL }) {
-  const posts = await getCollection('blog', ({ data }) => !data.draft);
-  const sorted = posts.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+function stripInvalidXmlChars(str: string): string {
+	return str.replace(
+		// biome-ignore lint/suspicious/noControlCharactersInRegex: https://www.w3.org/TR/xml/#charsets
+		/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F-\x9F\uFDD0-\uFDEF\uFFFE\uFFFF]/g,
+		"",
+	);
+}
 
-  return rss({
-    title: SITE_TITLE,
-    description: SITE_DESCRIPTION,
-    site: context.site,
-    stylesheet: '/rss-styles.xsl',
-    items: sorted.map((post) => ({
-      title: post.data.title,
-      description: post.data.description || '',
-      pubDate: post.data.date,
-      link: `/post/${post.id}`,
-    })),
-  });
+export async function GET(context: APIContext) {
+	const blog = await getSortedPosts();
+	const renderers = await loadRenderers([getMDXRenderer()]);
+	const container = await AstroContainer.create({ renderers });
+	const feedItems: RSSFeedItem[] = [];
+	for (const post of blog) {
+		if (post.data.password) {
+			feedItems.push({
+				title: post.data.title,
+				pubDate: post.data.published,
+				description: post.data.description || "",
+				link: url(`/posts/${post.id}/`),
+				content: i18n(I18nKey.passwordProtectedRss),
+			});
+			continue;
+		}
+		const { Content } = await render(post);
+		const rawContent = await container.renderToString(Content);
+		const cleanedContent = stripInvalidXmlChars(rawContent);
+		feedItems.push({
+			title: post.data.title,
+			pubDate: post.data.published,
+			description: post.data.description || "",
+			link: url(`/posts/${post.id}/`),
+			content: sanitizeHtml(cleanedContent, {
+				allowedTags: sanitizeHtml.defaults.allowedTags.concat(["img"]),
+			}),
+		});
+	}
+	return rss({
+		title: siteConfig.title,
+		description: siteConfig.subtitle || "No description",
+		site: context.site ?? "https://firefly.cuteleaf.cn",
+		customData: `<templateTheme>Firefly</templateTheme>
+		<templateThemeVersion>${pkg.version}</templateThemeVersion>
+		<templateThemeUrl>https://github.com/CuteLeaf/Firefly</templateThemeUrl>
+		<lastBuildDate>${formatDateI18nWithTime(new Date())}</lastBuildDate>`,
+		items: feedItems,
+	});
 }

