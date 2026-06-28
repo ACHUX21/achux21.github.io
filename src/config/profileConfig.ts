@@ -2,7 +2,7 @@ import type { ProfileConfig } from "../types/profileConfig";
 
 export const profileConfig: ProfileConfig = {
 	// 头像
-	avatar: "/avatar.gif",
+	avatar: "/avatar.png",
 
 	// 名字
 	name: "ACHUX21",

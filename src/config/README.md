@@ -22,7 +22,6 @@ src/config/
 ├── licenseConfig.ts          # 许可证配置
 ├── musicConfig.ts            # 音乐播放器配置
 ├── navBarConfig.ts           # 导航栏配置（含 LinkPresets 链接预设）
-├── pioConfig.ts              # 看板娘配置（Spine、Live2D）
 ├── plantumlConfig.ts         # PlantUML 图表配置
 ├── profileConfig.ts          # 用户资料配置
 ├── sidebarConfig.ts          # 侧边栏布局配置
@@ -62,7 +61,6 @@ import { profileConfig } from "@/config/profileConfig";
 | `licenseConfig.ts` | 许可证配置（CC 协议等） |
 | `musicConfig.ts` | 音乐播放器配置（Meting API / 本地音乐） |
 | `navBarConfig.ts` | 导航栏配置（动态链接、LinkPresets 链接预设、搜索配置） |
-| `pioConfig.ts` | 看板娘配置（Spine 模型、Live2D 模型） |
 | `plantumlConfig.ts` | PlantUML 图表渲染配置 |
 | `profileConfig.ts` | 用户资料配置（头像、姓名、社交链接） |
 | `sidebarConfig.ts` | 侧边栏布局配置（左侧/右侧/移动端组件列表） |
