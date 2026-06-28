@@ -41,5 +41,22 @@
   "src:content/posts/topology/cover.png": "232e33151d2b121a28",
   "public:assets/images/wallpapers/bg3.jpg": "04182004171f061e28",
   "public:assets/images/wallpapers/bg2.png": "0a2e4d030b1505111e",
-  "public:assets/images/wallpapers/bg1.jpg": "19283c344761425775"
+  "public:assets/images/wallpapers/bg1.jpg": "19283c344761425775",
+  "src:content/posts/1337-local-ctf-the-boss/cover.png": "84a6ce82a3c73a4b67",
+  "src:content/posts/1337-local-ctf-tbarkallah/cover.png": "84a6ce82a3c73a4b67",
+  "src:content/posts/1337-local-ctf-shellcode/cover.png": "84a6ce82a3c73a4b67",
+  "src:content/posts/1337-local-ctf-sanity-check/cover.png": "84a6ce82a3c73a4b67",
+  "src:content/posts/1337-local-ctf-ret2win/cover.png": "84a6ce82a3c73a4b67",
+  "src:content/posts/1337-local-ctf-numba-thiri/cover.png": "84a6ce82a3c73a4b67",
+  "src:content/posts/1337-local-ctf-notebook/cover.png": "84a6ce82a3c73a4b67",
+  "src:content/posts/1337-local-ctf-new-intra/cover.png": "84a6ce82a3c73a4b67",
+  "src:content/posts/1337-local-ctf-mol-taxi/cover.png": "84a6ce82a3c73a4b67",
+  "src:content/posts/1337-local-ctf-july-pool-2024/cover.png": "84a6ce82a3c73a4b67",
+  "src:content/posts/1337-local-ctf-intro-to-zk/cover.png": "84a6ce82a3c73a4b67",
+  "src:content/posts/1337-local-ctf-holy-bytes-hh/cover.png": "84a6ce82a3c73a4b67",
+  "src:content/posts/1337-local-ctf-encrypted-callback/cover.png": "84a6ce82a3c73a4b67",
+  "src:content/posts/1337-local-ctf-big-brother/cover.png": "84a6ce82a3c73a4b67",
+  "src:content/posts/1337-local-ctf-basit/cover.png": "84a6ce82a3c73a4b67",
+  "src:content/posts/1337-local-ctf-baby-overflow/cover.png": "84a6ce82a3c73a4b67",
+  "src:content/posts/1337-local-ctf-baby-aes/cover.png": "84a6ce82a3c73a4b67"
 }
