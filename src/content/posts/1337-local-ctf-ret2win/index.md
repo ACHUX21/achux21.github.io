@@ -79,4 +79,4 @@ Passing validation is not enough to make input safe. If the copy into the destin
 
 ---
 
-Cover: [Wallhaven xelyx3](https://wallhaven.cc/w/xelyx3) — Serial Experiments Lain.
+Cover: [Wallhaven 5y7e99](https://wallhaven.cc/w/5y7e99).

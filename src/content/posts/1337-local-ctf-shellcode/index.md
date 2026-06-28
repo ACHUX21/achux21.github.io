@@ -63,4 +63,4 @@ For shellcode challenges, the syscall sequence is usually simple. The real work 
 
 ---
 
-Cover: [Wallhaven xelyx3](https://wallhaven.cc/w/xelyx3) — Serial Experiments Lain.
+Cover: [Wallhaven w5m62x](https://wallhaven.cc/w/w5m62x).

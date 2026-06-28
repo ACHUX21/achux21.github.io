@@ -78,4 +78,4 @@ Fiat-Shamir style challenges must be bound to the commitment and transcript. If 
 
 ---
 
-Cover: [Wallhaven xelyx3](https://wallhaven.cc/w/xelyx3) — Serial Experiments Lain.
+Cover: [Wallhaven gwp2w3](https://wallhaven.cc/w/gwp2w3).

@@ -69,4 +69,4 @@ Blocklists fail against template languages because the language itself provides 
 
 ---
 
-Cover: [Wallhaven xelyx3](https://wallhaven.cc/w/xelyx3) — Serial Experiments Lain.
+Cover: [Wallhaven yqmlmx](https://wallhaven.cc/w/yqmlmx).

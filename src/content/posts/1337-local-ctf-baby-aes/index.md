@@ -84,4 +84,4 @@ Known plaintext plus a tiny keyspace turns strong primitives into a dictionary c
 
 ---
 
-Cover: [Wallhaven xelyx3](https://wallhaven.cc/w/xelyx3) — Serial Experiments Lain.
+Cover: [Wallhaven xelyx3](https://wallhaven.cc/w/xelyx3).

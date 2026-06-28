@@ -88,4 +88,4 @@ AuthN is not AuthZ. It is not enough to verify that a user is logged in; every o
 
 ---
 
-Cover: [Wallhaven xelyx3](https://wallhaven.cc/w/xelyx3) — Serial Experiments Lain.
+Cover: [Wallhaven og33jl](https://wallhaven.cc/w/og33jl).

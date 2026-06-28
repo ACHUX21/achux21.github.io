@@ -90,4 +90,4 @@ The payload's runtime output was decoy text. In malware-style CTFs, the flag oft
 
 ---
 
-Cover: [Wallhaven xelyx3](https://wallhaven.cc/w/xelyx3) — Serial Experiments Lain.
+Cover: [Wallhaven 7j38je](https://wallhaven.cc/w/7j38je).

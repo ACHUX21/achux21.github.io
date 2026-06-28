@@ -83,4 +83,4 @@ TLS key logs do not remove all complexity. For TLS 1.3, the cipher-suite hash an
 
 ---
 
-Cover: [Wallhaven xelyx3](https://wallhaven.cc/w/xelyx3) — Serial Experiments Lain.
+Cover: [Wallhaven ly3gmr](https://wallhaven.cc/w/ly3gmr).

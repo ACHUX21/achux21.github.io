@@ -73,4 +73,4 @@ Do not execute malware loaders just because they are Python. Decode each layer s
 
 ---
 
-Cover: [Wallhaven xelyx3](https://wallhaven.cc/w/xelyx3) — Serial Experiments Lain.
+Cover: [Wallhaven xe86w3](https://wallhaven.cc/w/xe86w3).

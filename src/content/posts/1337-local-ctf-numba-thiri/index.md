@@ -73,4 +73,4 @@ If you publish enough modular residues plus the quotient by the modulus product,
 
 ---
 
-Cover: [Wallhaven xelyx3](https://wallhaven.cc/w/xelyx3) — Serial Experiments Lain.
+Cover: [Wallhaven 8gk26o](https://wallhaven.cc/w/8gk26o).

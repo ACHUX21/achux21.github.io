@@ -53,4 +53,4 @@ Always reason about the storage type, not only the mathematical expression. Smal
 
 ---
 
-Cover: [Wallhaven xelyx3](https://wallhaven.cc/w/xelyx3) — Serial Experiments Lain.
+Cover: [Wallhaven 3qwqld](https://wallhaven.cc/w/3qwqld).

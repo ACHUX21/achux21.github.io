@@ -81,4 +81,4 @@ Good PCAP forensics reconstructs the attacker's path, not just the final artifac
 
 ---
 
-Cover: [Wallhaven xelyx3](https://wallhaven.cc/w/xelyx3) — Serial Experiments Lain.
+Cover: [Wallhaven yq8w5k](https://wallhaven.cc/w/yq8w5k).

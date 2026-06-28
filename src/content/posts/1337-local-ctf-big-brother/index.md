@@ -44,4 +44,4 @@ Save the reverse-engineering trail as soon as the flag is accepted: tool output,
 
 ---
 
-Cover: [Wallhaven xelyx3](https://wallhaven.cc/w/xelyx3) — Serial Experiments Lain.
+Cover: [Wallhaven qrjew7](https://wallhaven.cc/w/qrjew7).

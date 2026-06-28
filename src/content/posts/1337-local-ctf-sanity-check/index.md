@@ -36,4 +36,4 @@ Always capture the exact flag and source location even for trivial warm-up chall
 
 ---
 
-Cover: [Wallhaven xelyx3](https://wallhaven.cc/w/xelyx3) — Serial Experiments Lain.
+Cover: [Wallhaven qrzz57](https://wallhaven.cc/w/qrzz57).

@@ -53,4 +53,4 @@ Deleting a secret from the working tree does not delete it from Git history. In 
 
 ---
 
-Cover: [Wallhaven xelyx3](https://wallhaven.cc/w/xelyx3) — Serial Experiments Lain.
+Cover: [Wallhaven k81776](https://wallhaven.cc/w/k81776).

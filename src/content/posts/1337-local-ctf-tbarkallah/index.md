@@ -61,4 +61,4 @@ A first blood still needs a reproducible explanation. Capture the derivation imm
 
 ---
 
-Cover: [Wallhaven xelyx3](https://wallhaven.cc/w/xelyx3) — Serial Experiments Lain.
+Cover: [Wallhaven gw52yd](https://wallhaven.cc/w/gw52yd).

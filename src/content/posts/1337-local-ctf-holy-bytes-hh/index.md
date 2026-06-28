@@ -83,4 +83,4 @@ Branch-dependent runtime is enough to leak secrets. If a secret controls whether
 
 ---
 
-Cover: [Wallhaven xelyx3](https://wallhaven.cc/w/xelyx3) — Serial Experiments Lain.
+Cover: [Wallhaven gw55w7](https://wallhaven.cc/w/gw55w7).
